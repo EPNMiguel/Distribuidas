@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<style>
+    h3 {text-align:center;}
+    p {text-align:center;}
+    input {text-align:center;}
+    button {text-align:center;}
+</style>
+<body>
+
+<p>Pruebe la seguridad de su contrasena.</p>
+<p>Mide el nivel de seguridad de la contrsena</p>
+
+<center><input id="lol" type="text"></center>
+<center><div onclick="myFunction()">
+<button >Try it</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<h3 id="cont" style="color:blue;"></h3>
+</div></center>
+<script>
+function myFunction() {
+
+    //var str = "The best things in life are free";
+    var str = document.getElementById("lol").value;
+    var patt = new RegExp("(?=^.{8,}$)");
+    var res = patt.test(str);
+    var patt1 = new RegExp("(?=.*\\d)");
+    var res1 = patt1.test(str);
+    var patt2 = new RegExp("(?=.*\\W+)");
+    var res2 = patt2.test(str);
+    var patt3 = new RegExp("(?=.*[A-Z])");
+    var res3 = patt3.test(str);
+    var patt4 = new RegExp("(?=.*[a-z])");
+    var res4 = patt4.test(str);
+    
+    var msj;
+    var msj1;
+    var msj2;
+    var msj3;
+    var msj4;
+    
+    var cont=0
+    var msjc;
+    
+    if(res == true)
+    {
+        msj = "Su contrsena posee 8 caracteres o mas"
+        document.getElementById("demo").innerHTML = msj;
+        cont++;
+    }
+    else
+    {
+        msj = "Su contrsena NO posee 8 caracteres o mas"
+        document.getElementById("demo").innerHTML = msj;
+    }
+    
+    if(res1 == true)
+    {
+        msj1 = "Su contrsena posee caracteres numericos"
+        document.getElementById("demo1").innerHTML = msj1;
+        cont++;
+    }
+    else
+    {
+        msj1 = "Su contrsena NO posee caracteres numericos"
+        document.getElementById("demo1").innerHTML = msj1;
+    }
+    
+    if(res2 == true)
+    {
+        msj2 = "Su contrsena posee caracteres especiales"
+        document.getElementById("demo2").innerHTML = msj2;
+        cont++;
+    }
+    else
+    {
+        msj2 = "Su contrsena NO posee caracteres especiales"
+        document.getElementById("demo2").innerHTML = msj2;
+    }
+    
+    if(res3 == true)
+    {
+        msj3 = "Su contrsena posee letras mayusculas"
+        document.getElementById("demo3").innerHTML = msj3;
+        cont++;
+    }
+    else
+    {
+        msj3 = "Su contrsena NO posee letras mayusculas"
+        document.getElementById("demo3").innerHTML = msj3;
+    }
+    
+    if(res4 == true)
+    {
+        msj4 = "Su contrsena posee letras minusculas"
+        document.getElementById("demo4").innerHTML = msj4;
+        cont++;
+    }
+    else
+    {
+        msj4 = "Su contrsena NO posee letras minusculas"
+        document.getElementById("demo4").innerHTML = msj4;
+    }
+    
+    //document.getElementById("demo").innerHTML = res;
+    //document.getElementById("demo1").innerHTML = res1;
+    //document.getElementById("demo2").innerHTML = res2;
+    //document.getElementById("demo3").innerHTML = res3;
+    //document.getElementById("demo4").innerHTML = res4;
+    if(cont<3)
+    {
+        msjc = "Su contrasena es de nivel BAJO de seguridad";
+        document.getElementById("cont").innerHTML = msjc;
+    }
+    if(cont<5&&cont>=3)
+    {
+        msjc = "Su contrasena es de nivel MEDIO de seguridad";
+        document.getElementById("cont").innerHTML = msjc;
+    }
+    if(cont==5)
+    {
+        msjc = "Su contrasena es de nivel ALTO de seguridad";
+        document.getElementById("cont").innerHTML = msjc;
+    }
+}
+</script>
+
+</body>
+</html>
+
+
