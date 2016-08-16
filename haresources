@@ -1,0 +1,2 @@
+server1 IPaddr::192.168.237.128/24/eth0 apache2
+

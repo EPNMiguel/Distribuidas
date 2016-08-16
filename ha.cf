@@ -1,0 +1,4 @@
+keepalive 1
+deadtime 5
+bcast eth0
+node server1 server2
